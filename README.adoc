@@ -1,0 +1,18 @@
+= pocket-square-sort-shuffle
+
+Microservice for shuffling Pocket articles.
+
+TravisCI - https://travis-ci.org/pocket-square/pocket-square-sort-shuffle/
+
+DockerHub - https://hub.docker.com/r/pocketsquare/pocket-square-sort-shuffle/
+
+== HOWTO: start with docker
+
+[source,shell]
+----
+docker ps # to determine if container is already running
+docker kill $CONTAINER_ID # if needed
+
+docker pull pocketsquare/pocket-square-sort-shuffle:$TAG # to load specific image
+docker run -dit -p 5001:5000 --name pocket_square_sort_shuffle --link pocket_square_articles pocketsquare/pocket-square-sort-shuffle:$TAG # to start specific image
+----
