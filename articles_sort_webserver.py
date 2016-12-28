@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/sort')
 def sort():
-    request = Request('http://127.0.0.1:8080/fetch_cached')
+    request = Request('http://127.0.0.1:8080/fetch')
 
     try:
         response_json = urlopen(request).read()
