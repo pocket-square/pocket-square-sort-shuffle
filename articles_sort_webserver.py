@@ -8,14 +8,14 @@ app = Flask(__name__)
 
 @app.route('/sort')
 def sort():
-    request = Request('http://127.0.0.1:8080/fetch')
+    request = Request('http://pocket_square_articles:8080/articles/unread')
 
     try:
         response_json = urlopen(request).read()
         response = json.loads(response_json)
         new_response = []
         for k in response:
-            new_response.append(response[k])
+            new_response.append(k)
         shuffle(new_response)
         return json.dumps(new_response)
     except URLError, e:
@@ -23,4 +23,4 @@ def sort():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1')
+    app.run(host='0.0.0.0')
