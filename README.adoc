@@ -10,6 +10,7 @@ DockerHub - https://hub.docker.com/r/pocketsquare/pocket-square-sort-shuffle/
 
 [source,shell]
 ----
+docker rm pocket_square_sort_shuffle
 docker ps # to determine if container is already running
 docker kill $CONTAINER_ID # if needed
 
