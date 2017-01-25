@@ -1,0 +1,9 @@
+= HOWTO: run service
+
+== Endpoints
+
+GET to http://<host>:<port>/sort/{user_id} - get sorted list of articles for specified user
+
+== Service locations
+
+Development instance - 188.166.174.189:28104

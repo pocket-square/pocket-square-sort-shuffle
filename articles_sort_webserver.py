@@ -6,9 +6,9 @@ from random import shuffle
 app = Flask(__name__)
 
 
-@app.route('/sort')
-def sort():
-    request = Request('http://pocket_square_articles:8080/articles/unread')
+@app.route('/sort/<user_id>')
+def sort(user_id):
+    request = Request('http://pocket_square_articles:28103/articles/' + user_id + '/unread')
 
     try:
         response_json = urlopen(request).read()

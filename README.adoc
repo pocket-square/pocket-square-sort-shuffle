@@ -6,14 +6,8 @@ TravisCI - https://travis-ci.org/pocket-square/pocket-square-sort-shuffle/
 
 DockerHub - https://hub.docker.com/r/pocketsquare/pocket-square-sort-shuffle/
 
-== HOWTO: start with docker
+== Documentation
 
-[source,shell]
-----
-docker rm pocket_square_sort_shuffle
-docker ps # to determine if container is already running
-docker kill $CONTAINER_ID # if needed
+link:src/docs/howto-start-docker.adoc[HOWTO: start service as docker container]
 
-docker pull pocketsquare/pocket-square-sort-shuffle:$TAG # to load specific image
-docker run -dit -p 5001:5000 --name pocket_square_sort_shuffle --link pocket_square_articles pocketsquare/pocket-square-sort-shuffle:$TAG # to start specific image
-----
+link:src/docs/howto-run-service.adoc[HOWTO: run service]
