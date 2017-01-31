@@ -1,5 +1,5 @@
 from flask import Flask
-from urllib2 import Request, urlopen, URLError
+import requests
 import json
 from random import shuffle
 
@@ -8,18 +8,14 @@ app = Flask(__name__)
 
 @app.route('/sort/<user_id>')
 def sort(user_id):
-    request = Request('http://pocket_square_articles:28103/articles/' + user_id + '/unread')
+    request = requests.get('http://pocket_square_articles:8080/articles/' + user_id + '/unread')
+    response = request.json()
 
-    try:
-        response_json = urlopen(request).read()
-        response = json.loads(response_json)
-        new_response = []
-        for k in response:
-            new_response.append(k)
-        shuffle(new_response)
-        return json.dumps(new_response)
-    except URLError, e:
-        return 'Something went wrong:', e
+    new_response = []
+    for k in response:
+        new_response.append(k)
+    shuffle(new_response)
+    return json.dumps(new_response)
 
 
 if __name__ == '__main__':
