@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/sort/<user_id>')
 def sort(user_id):
-    request = requests.get('http://pocket_square_articles:8080/article/byUserId/' + user_id + '/unread')
+    request = requests.get('http://pocket_square_articles:8080/article/byUserId/' + user_id + '/unread?page=0&size=20')
     response = request.json()
 
     new_response = []
