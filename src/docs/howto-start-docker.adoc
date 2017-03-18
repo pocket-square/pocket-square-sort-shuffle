@@ -13,5 +13,5 @@ docker kill pocket-square-sort-shuffle; docker rm pocket-square-sort-shuffle
 [source,shell]
 ----
 docker pull pocketsquare/pocket-square-sort-shuffle:$TAG
-docker run -dit --name pocket-square-sort-shuffle --link pocket-square-articles -p 28104:5000 pocketsquare/pocket-square-sort-shuffle:$TAG
+docker run -dit --name pocket-square-sort-shuffle --link pocket-square-articles -e SERVICE_ENVIRONMENT=production -p 28104:5000 pocketsquare/pocket-square-sort-shuffle:$TAG
 ----

@@ -1,0 +1,9 @@
+default_environment: development
+development:
+  port: 5001
+  debug: true
+  pocket_square_articles_service: http://188.166.174.189:28103
+production:
+  port: 5000
+  debug: false
+  pocket_square_articles_service: http://pocket-square-articles:8080
