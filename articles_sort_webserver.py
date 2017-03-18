@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request as flask_request
 import requests
 import json
 from random import shuffle
@@ -8,7 +9,8 @@ app = Flask(__name__)
 
 @app.route('/sort/<user_id>')
 def sort(user_id):
-    request = requests.get('http://pocket-square-articles:8080/article/byUserId/' + user_id + '/unread?page=0&size=20')
+    count = flask_request.args.get('count')
+    request = requests.get('http://188.166.174.189:28103/article/byUserId/%s/unread?page=0&size=%s' % (user_id, count))
     response = request.json()
 
     new_response = []
@@ -19,4 +21,4 @@ def sort(user_id):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5001, debug=True)
