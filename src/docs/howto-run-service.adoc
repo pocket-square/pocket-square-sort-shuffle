@@ -2,7 +2,7 @@
 
 == Endpoints
 
-GET to http://<host>:<port>/sort/{user_id} - get sorted list of articles for specified user
+GET to http://<host>:<port>/sort/{user_id}?count=${count} - get shuffled list of {count} articles for specified user
 
 == Service locations
 

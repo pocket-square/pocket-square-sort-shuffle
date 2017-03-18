@@ -1,10 +1,14 @@
 = pocket-square-sort-shuffle
 
-Microservice for shuffling Pocket articles.
+Service for randomly shuffling Pocket articles.
 
-TravisCI - https://travis-ci.org/pocket-square/pocket-square-sort-shuffle/
+== Travis job
 
-DockerHub - https://hub.docker.com/r/pocketsquare/pocket-square-sort-shuffle/
+image:https://travis-ci.org/pocket-square/pocket-square-sort-shuffle.svg?branch=develop["Travis job", link="https://travis-ci.org/pocket-square/pocket-square-sort-shuffle"]
+
+== Docker repository
+
+https://hub.docker.com/r/pocketsquare/pocket-square-sort-shuffle/
 
 == Documentation
 
