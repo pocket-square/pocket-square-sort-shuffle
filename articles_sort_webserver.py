@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+from flask_cors import CORS, cross_origin
 import requests
 import json
 from random import shuffle
@@ -32,3 +33,4 @@ def sort(user_id):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=cfg[environment]['port'], debug=cfg[environment]['debug'])
+    CORS(app)
